@@ -1,5 +1,6 @@
 
 import random as randind
+from colorama import init, Fore, Back, Style
 
 mensajes_motivacionales = [
     "No tienes que ser el mejor, solo dar lo mejor de ti.",
@@ -25,36 +26,39 @@ mensajes_motivacionales = [
 
 nombres = ["Juan","María","Pedro","Ana","Luis","Laura","Carlos","Sofía","Javier","Isabel"]
 
-while True:
-    Print_mensaje = "ver un mensaje"
-    Print_lista = "mostrar una lista de nombres"
-    Print_salir = "salir del programa"
-    
-    print("------------------------------------------------------------------------------------------")
-    print("Menú Interactivo")
-    print("1. " + Print_mensaje)
-    print("2. " + Print_lista)
-    print("3. " + Print_salir)
-    print("------------------------------------------------------------------------------------------")
+def menu():
+    while True:
+        Print_mensaje = "ver un mensaje"
+        Print_lista = "mostrar una lista de nombres"
+        Print_salir = "salir del programa"
+        
+        print("------------------------------------------------------------------------------------------")
+        print("Menú Interactivo")
+        print(Fore.MAGENTA + "1. " + Print_mensaje + Fore.RESET)
+        print(Fore.MAGENTA + "2. " + Print_lista + Fore.RESET)
+        print(Fore.MAGENTA + "3. " + Print_salir + Fore.RESET)
+        print("------------------------------------------------------------------------------------------")
 
-    
-    opcion = input("Seleccione una opción (1-3): ")
-    print("")
-    
-     
-    if opcion == "1" or opcion in Print_mensaje:
-        print("------------------------------------------------------------------------------------------")
-        print("" + randind.choice(mensajes_motivacionales))
-        print("------------------------------------------------------------------------------------------")
+        
+        opcion = input("Seleccione una opción (1-3): ")
         print("")
         
-    elif opcion == "2" or opcion in Print_lista:
-        print(nombres)
-        print("")
- 
-    elif opcion == "3" or opcion in Print_salir:
-        print("Gracias por usar el programa. ¡Hasta luego!")
-        break
-    else:
-        print("Opción no válida. Por favor, seleccione una opción del menú.")
-        print("")
+        
+        if opcion == "1" or opcion in Print_mensaje:
+            print("------------------------------------------------------------------------------------------")
+            print(Fore.YELLOW + "" + randind.choice(mensajes_motivacionales) + Fore.RESET)
+            print("------------------------------------------------------------------------------------------")
+            print("")
+            
+        elif opcion == "2" or opcion in Print_lista:
+            print(Fore.GREEN + "", nombres, Fore.RESET)
+            print("")
+    
+        elif opcion == "3" or opcion in Print_salir:
+            print(Fore.CYAN + "Gracias por usar el programa. ¡Hasta luego!" + Fore.RESET)
+            break
+        else:
+            print("Opción no válida. Por favor, seleccione una opción válida.")
+            print("")
+            
+menu()

@@ -1,4 +1,6 @@
 
+from colorama import init, Fore, Back, Style
+
 INVproductos = {   
     "producto": "Nike Air Max",
     "talla": "40",
@@ -9,7 +11,7 @@ INVproductos = {
 def ver_productos():
     print("--------------------------------------------------------------")
     for clave in INVproductos:
-        print(clave,":", INVproductos[clave])
+        print(Fore.GREEN + clave + ":" + Fore.BLUE, INVproductos[clave], Fore.RESET)
     print("--------------------------------------------------------------")
 
 def Editar():
@@ -31,9 +33,7 @@ def Editar():
         print("La clave no existe.")
         print("--------------------------------------------------------------")
 
-    
-    
-    
+
 def Eliminar ():
         
     Clave_Eliminar = input("Introduce la clave a eliminar: ").lower()
@@ -58,29 +58,30 @@ def Eliminar ():
         print("La clave no existe.")
     print("--------------------------------------------------------------")
 
-    
-while True:
-    ver_productos()
-    print("")
-    print("--------------------------------------------------------------")
-    print("Bienvenido al sistema de gestión de inventario!, ¿qué deseas hacer?")
-    print("Editar(1)")
-    print("Eliminar(2)")
-    print("Salir(3)")
-    print("--------------------------------------------------------------")
-    
-    opcion = input("Elige una opción: ").lower()
-    
-    if opcion == "1" or opcion == "editar":
-        Editar()
-    
-    elif opcion == "2" or opcion == "eliminar":
-        Eliminar()
-    
-    else:
-        print("Programa finalizado.")
-        break
+def menu():
+     
+    while True:
+        ver_productos()
+        print("")
+        print("--------------------------------------------------------------")
+        print(Fore.CYAN + "Bienvenido al sistema de gestión de inventario!, ¿qué deseas hacer?" + Fore.RESET)
+        print(Fore.BLUE + "Editar(1)" + Fore.RESET)
+        print(Fore.RED + "Eliminar(2)" + Fore.RESET)
+        print(Fore.YELLOW + "Salir(3)" + Fore.RESET)
+        print("--------------------------------------------------------------")
+        
+        opcion = input("Elige una opción: ").lower()
+        
+        if opcion == "1" or opcion == "editar":
+            Editar()
+        
+        elif opcion == "2" or opcion == "eliminar":
+            Eliminar()
+        
+        else:
+            print("Programa finalizado.")
+            break
 
 ver_productos()
-    
+menu()
     
