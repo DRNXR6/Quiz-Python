@@ -38,11 +38,9 @@ def menu():
         print(Fore.MAGENTA + "2. " + Print_lista + Fore.RESET)
         print(Fore.MAGENTA + "3. " + Print_salir + Fore.RESET)
         print("------------------------------------------------------------------------------------------")
-
         
         opcion = input("Seleccione una opción (1-3): ")
         print("")
-        
         
         if opcion == "1" or opcion in Print_mensaje:
             print("------------------------------------------------------------------------------------------")
@@ -51,8 +49,8 @@ def menu():
             print("")
             
         elif opcion == "2" or opcion in Print_lista:
-            print(Fore.GREEN + "", nombres, Fore.RESET)
-            print("")
+            for nom in nombres:
+                print(Fore.BLUE + nom + Fore.RESET)
     
         elif opcion == "3" or opcion in Print_salir:
             print(Fore.CYAN + "Gracias por usar el programa. ¡Hasta luego!" + Fore.RESET)

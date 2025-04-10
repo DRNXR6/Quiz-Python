@@ -67,7 +67,7 @@ def menu():
         print(Fore.CYAN + "Bienvenido al sistema de gestión de inventario!, ¿qué deseas hacer?" + Fore.RESET)
         print(Fore.BLUE + "Editar(1)" + Fore.RESET)
         print(Fore.RED + "Eliminar(2)" + Fore.RESET)
-        print(Fore.YELLOW + "Salir(3)" + Fore.RESET)
+        print(Fore.YELLOW + "Salir del programa(3)" + Fore.RESET)
         print("--------------------------------------------------------------")
         
         opcion = input("Elige una opción: ").lower()
@@ -82,6 +82,5 @@ def menu():
             print("Programa finalizado.")
             break
 
-ver_productos()
 menu()
     
